@@ -14,6 +14,9 @@
 		0CFEE8EE22A821F300FDAF74 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CFEE8ED22A821F300FDAF74 /* CloudKit.framework */; };
 		0CFEE8F122A8239C00FDAF74 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFEE8F022A8239C00FDAF74 /* User.swift */; };
 		0CFEE8F322A823B200FDAF74 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFEE8F222A823B200FDAF74 /* UserController.swift */; };
+		0CFEE8F722A837E400FDAF74 /* FetchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFEE8F622A837E400FDAF74 /* FetchViewController.swift */; };
+		0CFEE8F922A837EF00FDAF74 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFEE8F822A837EF00FDAF74 /* SignUpViewController.swift */; };
+		0CFEE8FB22A837F900FDAF74 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFEE8FA22A837F900FDAF74 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		0CFEE8ED22A821F300FDAF74 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		0CFEE8F022A8239C00FDAF74 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0CFEE8F222A823B200FDAF74 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		0CFEE8F622A837E400FDAF74 /* FetchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchViewController.swift; sourceTree = "<group>"; };
+		0CFEE8F822A837EF00FDAF74 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0CFEE8FA22A837F900FDAF74 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,7 @@
 				0CFEE8E222A821E500FDAF74 /* LaunchScreen.storyboard */,
 				0CFEE8F522A823BE00FDAF74 /* Model */,
 				0CFEE8F422A823B700FDAF74 /* ModelController */,
+				0CFEE8FC22A837FF00FDAF74 /* ViewController */,
 			);
 			path = CKUsers;
 			sourceTree = "<group>";
@@ -103,6 +110,16 @@
 				0CFEE8F022A8239C00FDAF74 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0CFEE8FC22A837FF00FDAF74 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0CFEE8F622A837E400FDAF74 /* FetchViewController.swift */,
+				0CFEE8F822A837EF00FDAF74 /* SignUpViewController.swift */,
+				0CFEE8FA22A837F900FDAF74 /* WelcomeViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,8 +202,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CFEE8F322A823B200FDAF74 /* UserController.swift in Sources */,
+				0CFEE8F722A837E400FDAF74 /* FetchViewController.swift in Sources */,
 				0CFEE8F122A8239C00FDAF74 /* User.swift in Sources */,
+				0CFEE8FB22A837F900FDAF74 /* WelcomeViewController.swift in Sources */,
 				0CFEE8DA22A821E500FDAF74 /* AppDelegate.swift in Sources */,
+				0CFEE8F922A837EF00FDAF74 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

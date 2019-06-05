@@ -45,7 +45,6 @@ class UserController {
                 }
                 self.currentUser = newUser
                 completion(true)
-                
             })
         }
     }
@@ -86,7 +85,6 @@ class UserController {
                 self.currentUser = currentUser
                 completion(true)
             })
-            
         }
     }
 }
