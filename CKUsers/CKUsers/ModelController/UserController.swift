@@ -17,7 +17,7 @@ class UserController {
     
     private init() {}
     
-//    CRUD
+    //    CRUD
     
     func  createNewUser(username: String, firstName: String, completion: @escaping (Bool) -> Void) {
         
@@ -28,7 +28,7 @@ class UserController {
                 return
             }
             
-//            SSN
+            //            SSN
             guard let appleUserID = appleUserID else { completion(false) ; return }
             
             let appleUserReference = CKRecord.Reference(recordID: appleUserID, action: .deleteSelf)
@@ -46,14 +46,47 @@ class UserController {
                 self.currentUser = newUser
                 completion(true)
                 
-        })
-            
-            
-            
+            })
         }
-        
     }
     
-    
-    
+    func fetchCurrentUser(completion: @escaping (Bool) -> Void) {
+        CKContainer.default().fetchUserRecordID { (appleUserRecordID, error) in
+            if let error = error {
+                print("There was and error obtaining the 'Users' recordID for the user: \(error.localizedDescription)")
+                completion(false)
+                return
+            }
+            
+            guard let appleUserRecordID = appleUserRecordID else {
+                completion(false) ; return
+            }
+            
+            let appleUserReference = CKRecord.Reference(recordID: appleUserRecordID, action: .deleteSelf)
+            
+            let predicate = NSPredicate(format: "%K == %@",
+                                        User.appleUserReferenceKey, appleUserReference)
+            
+            let query = CKQuery(recordType: User.userKey, predicate: predicate)
+            
+            self.publicDB.perform(query, inZoneWith: nil, completionHandler: {
+                (records, error) in
+                if let error = error {
+                    print("There was and error obtaining the 'Users' recordID for the user: \(error.localizedDescription)")
+                    completion(false)
+                    return
+                }
+                
+                guard let records = records,
+                records.count == 1,
+                    let userRecord = records.first
+                    else { completion(false) ; return }
+                
+                let currentUser = User(ckRecord: userRecord)
+                self.currentUser = currentUser
+                completion(true)
+            })
+            
+        }
+    }
 }
